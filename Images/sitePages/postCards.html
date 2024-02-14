@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600&family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script defer type="module" src="scriptFiles/main.js"></script>
+    <script defer type="module" src="../scriptFiles/hambugerMenu.js"></script>
+    <script defer type="module" src="../scriptFiles/post-detail.js"></script>
+    <script defer type="module" src="../scriptFiles/postCards.js"></script>
+   
+    
+
+
+    <title>All posts</title>
+</head>
+<body>
+    <nav id="nav-bar-header">
+        <ul class="nav-grid">
+            <li class="grid-item facebook-icon">
+                <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+            </li>
+
+            <li class="grid-item pinterest-icon">
+                <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+            </li>
+
+            <li class="grid-item instagram-icon">
+                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+            </li>
+
+            <li class="grid-item twitter-icon">
+                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+            </li>
+
+            <li class="grid-item search-icon">
+                <i class="fa fa-search" style="color: #ffffff;"></i>
+            </li>
+
+            <li class="grid-item search-bar">
+                <input type="text" placeholder="Search...">
+            </li>
+
+
+            <li class="hambuger-icon">
+                <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+                    <div class="menu-links">
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-nav-links"><a href="../Index.html">Home</a></li>
+                            <li class="dropdown-nav-links"><a href="aboutUs.html">About</a></li>
+                            <li class="dropdown-nav-links"><a href="postCards.html">Posts</a></li>
+                            <li class="dropdown-nav-links"><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+            </li>
+
+
+        </ul>
+    </nav>
+
+
+
+    <nav id="logo-nav-bar">
+        <ul class="logo-bar-grid">
+
+            <li class="header-nav-links">
+                <a href="../Index.html">Home</a>
+            </li>
+
+            <li class="header-nav-links">
+                <a href="../sitePages/aboutUs.html">About</a>
+            </li>
+
+            <li class="header-nav-links">
+                <img class="main-logo" src="../Images/logo-the-lore-of-pour.png" alt="The Lore of Pour Logo">
+            </li>
+
+            <li class="header-nav-links">
+                <a href="../sitePages/postCards.html">Posts</a>
+            </li>
+
+            <li class="header-nav-links">
+                <a href="../sitePages/contact.html">Contact</a>
+            </li>
+            
+            
+
+        </ul>
+    </nav>
+
+    <hr>
+
+    <h1>Take a peek at all of our posts!</h1>
+
+
+    <div class="loader-container">
+        <div id="loader" class="loader">
+            <div class="loader">
+                <img src="/Images/holyCupLoader.png" alt="Loading">
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="loader-message">Sit Tight... </div>
+                <div class="loader-message-lower"> We're fetching everything you need...</div>
+              </div>
+        </div>
+    </div>
+
+
+
+
+
+<div id="cards-container" class="cards-container"></div>
+
+
+   
+
+
+ 
+    
+</body>
+</html>
