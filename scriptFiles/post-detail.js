@@ -1,23 +1,27 @@
 
 // Post details.js
 
+
+
+
+
 async function fetchPostDetails() {
     const loader = document.getElementById('loader');
-    const errorContainer = document.getElementById('error-container');
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
 
-   
     if (!postId) {
-        errorContainer.innerHTML = 'Error: Post ID is missing in the URL.';
-        loader.style.display = 'none';
+        if (loader) loader.style.display = 'none';
         return;
     }
 
     try {
         const response = await fetch(`https://www.the-lore-of-pour.com/wp-json/wp/v2/posts/${postId}?_embed`);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+           
+            console.error(`HTTP error! status: ${response.status}`);
+            if (loader) loader.style.display = 'none';
+            return;
         }
         const post = await response.json();
 
@@ -28,10 +32,8 @@ async function fetchPostDetails() {
         document.getElementById('postContent').innerHTML = post.content.rendered;
 
         applyStyling();
-    } catch (error) {
-        errorContainer.innerHTML = `Apologies- we could not fetch the post details: ${error.message}. Please try again later.`;
     } finally {
-        loader.style.display = 'none'; 
+        if (loader) loader.style.display = 'none';
     }
 }
 

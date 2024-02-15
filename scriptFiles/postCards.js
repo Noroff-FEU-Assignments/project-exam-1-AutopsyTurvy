@@ -1,20 +1,21 @@
 
-import { baseURL, allPostsURL } from './urlCall.js';
+import { baseURL, cardPostsURL } from './urlCall.js'; 
 
 async function insertPostCards() {
     const cardLoader = document.getElementById('loader');
     try {
-        const response = await fetch(allPostsURL);
+       
+        const response = await fetch(cardPostsURL); 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const posts = await response.json();
 
-        const cardsContainer = document.querySelector('#cards-container'); 
+        const cardsContainer = document.querySelector('#cards-container');
 
         posts.forEach(post => {
             const cardElement = document.createElement('div');
-            cardElement.className = 'post-card'; 
+            cardElement.className = 'post-card';
 
             const imgRegex = /<img.*?src=["'](.*?)["']/;
             const imgMatch = post.content.rendered.match(imgRegex);
@@ -38,6 +39,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (cardsContainer) {
         insertPostCards();
     } else {
-       
+    
     }
 });
