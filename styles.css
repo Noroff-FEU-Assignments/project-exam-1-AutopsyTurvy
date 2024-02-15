@@ -575,6 +575,30 @@ body {
         padding: 20px;
     }
     
+
+
+.load-more-button {
+    padding: 0.8em;
+    font-size: 1.2em;
+    background: none;
+    border: 1px solid black; 
+    cursor: pointer;
+    color: white;
+    background-color: #3b3530;
+    transition: all 0.5s;
+
+}
+
+
+
+.load-more-button:hover {
+    background-color: white;
+    box-shadow: #000;
+    color: #3b3530;
+    border: 1px solid black;
+}
+
+
     
     
     /* --- About Us Page ----------------------------------------------------------------------*/
