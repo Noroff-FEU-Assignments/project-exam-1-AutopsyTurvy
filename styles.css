@@ -494,6 +494,7 @@ body {
         width: 90%;
         height: 50vh;
         object-fit: cover;
+        cursor: pointer;
     }
     
     .grid-container {
@@ -526,6 +527,42 @@ body {
         padding: 0.5em;
     }
     
+
+
+
+
+
+  /* --- Post Details-- Modal ----------------------------------------------------------------------*/
+
+
+
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1; 
+        padding-top: 3.2em; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: auto; 
+        margin-bottom: 2em;
+      }
+      
+ 
+      .modal-content {
+        position: relative;
+        background-color: #3b3530;
+        margin: 0 auto;
+        border: 2px solid #3b3530;
+        width: 100%;
+        max-width: 50%;
+
+      }
+      
+
+
+
     
     
     
@@ -577,7 +614,7 @@ body {
     
 
 
-.load-more-button {
+#see-more-button, #see-less-button {
     padding: 0.8em;
     font-size: 1.2em;
     background: none;
@@ -586,12 +623,14 @@ body {
     color: white;
     background-color: #3b3530;
     transition: all 0.5s;
+    margin: 0 auto;
+    margin-bottom: 3em;
 
 }
 
 
 
-.load-more-button:hover {
+#see-more-button:hover, #see-less-button:hover {
     background-color: white;
     box-shadow: #000;
     color: #3b3530;
