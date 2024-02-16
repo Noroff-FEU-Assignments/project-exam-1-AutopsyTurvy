@@ -1,24 +1,22 @@
 
+//Post Detail Page-- 
 
-
-
-// Post Details Page
 
 async function fetchPostDetails() {
-    const loader = document.getElementById('loader');
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
 
     if (!postId) {
-        if (loader) loader.style.display = 'none';
+        window.hideLoader();
         return;
     }
 
     try {
+       
         const response = await fetch(`https://www.the-lore-of-pour.com/wp-json/wp/v2/posts/${postId}?_embed`);
         if (!response.ok) {
             console.error(`HTTP error! status: ${response.status}`);
-            if (loader) loader.style.display = 'none';
+            window.hideLoader(); 
             return;
         }
         const post = await response.json();
@@ -31,7 +29,7 @@ async function fetchPostDetails() {
 
         applyStyling();
     } finally {
-        if (loader) loader.style.display = 'none';
+        window.hideLoader(); 
     }
 }
 
@@ -57,7 +55,6 @@ function applyStyling() {
         img.style.marginLeft = 'auto';
         img.style.marginRight = 'auto';
 
-    
         img.addEventListener('click', function() {
             const modal = document.getElementById('myModal');
             const modalImg = document.getElementById('modalImage');
@@ -66,7 +63,6 @@ function applyStyling() {
         });
     }
 
-  
     window.onclick = function(event) {
         const modal = document.getElementById('myModal');
         if (event.target == modal) {

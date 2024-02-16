@@ -1,6 +1,11 @@
 
 // Contact
 
+document.addEventListener('DOMContentLoaded', () => {
+  
+    window.hideLoader();
+});
+
 const isValidEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -34,14 +39,14 @@ const validateInputs = () => {
     if (!isValidationOn) return;
 
     isFormValid = true;
-    inputs.forEach(input => resetElm(input)); 
+    inputs.forEach(resetElm); 
 
     if (!nameInput.value) {
         isFormValid = false;
         invalidateElm(nameInput, "Your name is required.");
     } else if (nameInput.value.length < 5) {
         isFormValid = false;
-        invalidateElm(nameInput, "Your name must be longer than five characters");
+        invalidateElm(nameInput, "Your name must be longer than five characters.");
     }
 
     if (!emailInput.value) {
@@ -49,7 +54,7 @@ const validateInputs = () => {
         invalidateElm(emailInput, "Please enter a valid email.");
     } else if (!isValidEmail(emailInput.value)) {
         isFormValid = false;
-        invalidateElm(emailInput, "Please enter a valid email address");
+        invalidateElm(emailInput, "Please enter a valid email address.");
     }
 
     if (!subjectInput.value) {
@@ -57,7 +62,7 @@ const validateInputs = () => {
         invalidateElm(subjectInput, "Please tell us what we can help you with.");
     } else if (subjectInput.value.length <= 15) {
         isFormValid = false;
-        invalidateElm(subjectInput, "The subject must be longer than fifteen characters");
+        invalidateElm(subjectInput, "The subject must be longer than fifteen characters.");
     }
 
     if (!messageInput.value) {
@@ -65,18 +70,30 @@ const validateInputs = () => {
         invalidateElm(messageInput, "Let us know what you're thinking.");
     } else if (messageInput.value.length <= 25) {
         isFormValid = false;
-        invalidateElm(messageInput, "Your message must be longer than twenty-five characters");
+        invalidateElm(messageInput, "Your message must be longer than twenty-five characters.");
     }
 };
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    window.showLoader();
 
     isValidationOn = true;
     validateInputs();
+
     if (isFormValid) {
+     
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+
+        window.hideLoader();
+
         form.remove();
         thankYou.classList.remove("hidden");
+    } else {
+       
+        window.hideLoader();
     }
 });
 

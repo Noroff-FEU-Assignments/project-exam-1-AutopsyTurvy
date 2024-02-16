@@ -240,7 +240,7 @@ body {
         top: 70%;
         left: 50%; 
         transform: translate(-50%, -50%);
-        display: flex; 
+        display: block; 
         flex-direction: column; 
         justify-content: center; 
         align-items: center;
@@ -560,10 +560,6 @@ body {
 
       }
       
-
-
-
-    
     
     
     /* --- Post Cards Page ----------------------------------------------------------------------*/
@@ -628,6 +624,9 @@ body {
 
 }
 
+#see-more-button {
+display: none;
+}
 
 
 #see-more-button:hover, #see-less-button:hover {
