@@ -32,12 +32,13 @@ body {
     
     /* --- Navigation Bar ----------------------------------------------------------------------*/
     
-    #nav-bar-header {
+    #nav-bar-header, #nav-bar-footer {
         background-color: #3b3530;
         height: 3em;
         display: grid;
         grid-template-columns: repeat(24, 1fr); 
     }
+
     
     .nav-grid {
         list-style: none;
@@ -56,24 +57,8 @@ body {
         font-size: 1.8em;
     }
     
-    .facebook-icon { 
-        grid-column: 2; }
     
-    .pinterest-icon { 
-        grid-column: 3; }
-    
-    .instagram-icon { 
-        grid-column: 4; }
-    
-    .twitter-icon { 
-        grid-column: 5; }
-    
-    .search-icon { 
-        grid-column: 6; }
-    
-    .search-bar { 
-        grid-column: 7 / span 4; }
-    
+
     
     .search-icon {
         grid-column: 17; 
@@ -96,7 +81,71 @@ body {
         background-color: white; 
         outline: none; 
     }
+
+   /* ---Footer----------------------------------------------------------------------*/
+
+
+    .facebook-icon { 
+        grid-column: 3; }
     
+    .pinterest-icon { 
+        grid-column: 4; }
+    
+    .instagram-icon { 
+        grid-column: 5; }
+    
+    .twitter-icon { 
+        grid-column: 6; }
+
+
+
+        @media screen and (max-width: 1000px) {
+
+
+            .search-icon {
+                grid-column: 15; 
+            }
+            
+            .search-bar {
+                grid-column: 16 / span 6; 
+            }
+
+
+            .facebook-icon { 
+                grid-column: 3; }
+            
+            .pinterest-icon { 
+                grid-column: 5; }
+            
+            .instagram-icon { 
+                grid-column: 7; }
+            
+            .twitter-icon { 
+                grid-column: 9; }
+            
+        }
+        
+        
+        @media screen and (max-width: 750px) {
+
+
+            .search-icon {
+                grid-column: 13; 
+            }
+            
+            .search-bar {
+                grid-column: 14 / span 8; 
+            }
+
+
+
+        }
+
+
+
+
+    
+
     
     /* --- Hamburger Menu ----------------------------------------------------------------------*/
     
@@ -222,7 +271,6 @@ body {
             display: none;
         }   
     }
-    
     
     
     

@@ -31,8 +31,9 @@ export function carouselControls() {
     let autoScroll;
 
     function scrollRight() {
+        const smallerStep = postWidth / 5; 
         if (postsContainer.scrollLeft < totalScrollWidth - postWidth) {
-            postsContainer.scrollBy({ left: postWidth, behavior: 'smooth' });
+            postsContainer.scrollBy({ left: smallerStep, behavior: 'smooth' });
         } else {
             smoothReset(0);
         }
@@ -47,6 +48,9 @@ export function carouselControls() {
         }
         if (autoScroll) resetAutoScroll(); 
     }
+
+
+    // To "loop" the posts without having to call them infinitely and slow loading times
 
     function smoothReset(position) {
         postsContainer.style.transition = 'opacity 0.2s ease';
