@@ -827,6 +827,7 @@ display: none;
 
     .form-group input {
         outline: 0.5px solid black;
+        width: 80%;
     }
     
     
