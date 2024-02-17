@@ -15,11 +15,6 @@ async function fetchPostDetails() {
     if (!postContainer) {
         postContainer = document.createElement('div');
         postContainer.id = 'post-container';
-
-        //note
-        //attaching the error to an element within the html created odd behaviour
-        //the post-container is in my index.html- this should create another div, in the event of an error :)
-
         document.body.appendChild(postContainer); 
     }
 
@@ -83,8 +78,14 @@ function applyStyling() {
         img.addEventListener('click', function() {
             const modal = document.getElementById('myModal');
             const modalImg = document.getElementById('modalImage');
-            modal.style.display = "block";
-            modalImg.src = this.src;
+
+            if (this.src.trim() !== '') { 
+                modalImg.src = this.src; 
+                modal.style.display = "block";
+            } else {
+                
+                console.log('Empty image src, cannot display the modal.');
+            }
         });
     }
 
