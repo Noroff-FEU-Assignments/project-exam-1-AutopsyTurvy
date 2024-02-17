@@ -1,8 +1,10 @@
-// Loader.js
+
+//Loader
 
 
 function showLoader() {
     document.getElementById('loader').style.display = 'block';
+    setTimeout(hideLoader, 1500);
 }
 
 function hideLoader() {
