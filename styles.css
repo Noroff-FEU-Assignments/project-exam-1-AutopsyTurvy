@@ -766,9 +766,6 @@ display: none;
     
     
     
-    
-    
-    
     .contact-us-image {
     
         width: 100vw;
@@ -803,11 +800,14 @@ display: none;
     
     form {
         padding: 1em;
+        border: 1px solid black;
     }
     
     .form-group {
         margin-bottom: 1.5em;
     }
+    
+
     
     .form-group label {
         display: block;
@@ -820,12 +820,17 @@ display: none;
         width: 320px;
         padding: 10px;
         font-size: 20px;
-        color: #333;
+        color: #000;
         margin-bottom: 4px;
+       
+    }
+
+    .form-group input {
+        outline: 0.5px solid black;
     }
     
     
-    
+ 
     .subject-box{
         width: 80%;
     }
@@ -837,10 +842,10 @@ display: none;
     }
     
     input.invalid {
-        border: 1px solid red;
+        border: 1px solid darkred;
     }
     
-    .error-hint {color: red;}
+    .error-hint {color: darkred;}
     
     .submit-button {
         padding: 0.8em;
