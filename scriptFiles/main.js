@@ -1,25 +1,26 @@
 
 
 
+
+
 // main.js
+
 
 
 import { baseURL, allPostsURL } from './urlCall.js';
 import { carouselControls } from './carousel.js';
+import { displayErrorMessage } from './errorHandling.js';
 
 async function insertPostTitlesAndImages() {
-    const errorContainer = document.getElementById('error-container') || document.querySelector('#posts-container');
+    window.showLoader();
     try {
-        window.showLoader(); 
-
-        const response = await fetch(allPostsURL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await fetch(allPostsURL); 
+        if (!response.ok) { 
+  
+            throw {type: 'ServerError', message: `Failed to load: ${response.statusText}`};
         }
         const posts = await response.json();
         const postsContainer = document.querySelector('#posts-container');
-
-        errorContainer.innerHTML = ''; 
 
         let mostRecentPostDate = new Date(Math.max(...posts.map(post => new Date(post.date_gmt))));
         let mostRecentPostId = posts.find(post => new Date(post.date_gmt).getTime() === mostRecentPostDate.getTime()).id;
@@ -38,8 +39,12 @@ async function insertPostTitlesAndImages() {
             postsContainer.appendChild(postElement);
         });
     } catch (error) {
-       
-        errorContainer.innerHTML = `<div class="error-message">An error occurred: ${error.message}</div>`;
+  
+        if (error.name === "TypeError") {
+            displayErrorMessage({type: 'NetworkError', message: error.message}, '.loader');
+        } else {
+            displayErrorMessage({type: error.type || 'GeneralError', message: error.message}, '.loader');
+        }
     } finally {
         window.hideLoader(); 
     }

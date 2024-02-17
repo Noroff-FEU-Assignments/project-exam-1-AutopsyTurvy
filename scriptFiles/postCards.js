@@ -7,6 +7,8 @@
 
 
 
+
+
 import { baseURL, cardPostsURL } from './urlCall.js'; 
 
 let currentIndex = 0;
@@ -15,7 +17,6 @@ let totalPosts = [];
 
 async function insertPostCards(loadMore = false) {
     try {
-        
         if (!loadMore) {
             currentIndex = 0; 
             document.querySelector('#cards-container').innerHTML = '';
@@ -45,16 +46,20 @@ async function insertPostCards(loadMore = false) {
             cardsContainer.appendChild(cardElement);
         });
 
-       
         document.getElementById('see-more-button').style.display = currentIndex < totalPosts.length ? 'block' : 'none';
         document.getElementById('see-less-button').style.display = currentIndex > postsPerPage ? 'block' : 'none';
-
     } catch (error) {
         console.error("We could not fetch the posts for cards: ", error);
-  
+
+     
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message'; 
+        errorDiv.textContent = "Something went wrong while fetching the posts. Please try again later.";
+        const cardsContainer = document.querySelector('#cards-container');
+        cardsContainer.appendChild(errorDiv); 
+
         document.getElementById('see-more-button').style.display = 'none';
     } finally {
-   
         window.hideLoader();
     }
 }

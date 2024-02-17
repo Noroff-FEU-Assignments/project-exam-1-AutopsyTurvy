@@ -747,51 +747,17 @@ display: none;
     /* --- Error Handling ----------------------------------------------------------------------*/
     
     
-    
-    .error-message, #error-container {
-        font-family: 'Lato', sans-serif;
-        border: black 2px solid;
-    
-    }
-    
-
     .error-message {
         color: #721c24; 
         background-color: white; 
-        padding: 0.75rem 1.25rem;
-        margin-bottom: 1rem;
-        border: 1px solid black;
-        text-align: center;
-        width: 60%;
-        position: absolute;
-        top: 20px; 
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    
-    .error-message {
-        
-    
-        padding: 2em;
+        padding: 20px;
+        margin-bottom: 2em; 
+        border: 1px solid black; 
+        text-align: center; 
+        font-weight: bold; 
         margin: 0 auto;
     }
-    
-    
-    #error-container {
-        padding: 1em;
-        margin: 0 auto; 
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    
-        max-width: fit-content;
-        border: 1px solid #ccc; 
-    }
-    
-    
-    
+
     
     /* --- Contact Page ----------------------------------------------------------------------*/
     

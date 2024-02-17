@@ -1,22 +1,44 @@
 
-//Post Detail Page-- 
+
+
+
+
+
+// Post Detail Page
+
+
+
 
 
 async function fetchPostDetails() {
+    let postContainer = document.getElementById('post-container');
+    if (!postContainer) {
+        postContainer = document.createElement('div');
+        postContainer.id = 'post-container';
+
+        //note
+        //attaching the error to an element within the html created odd behaviour
+        //the post-container is in my index.html- this should create another div, in the event of an error :)
+
+        document.body.appendChild(postContainer); 
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
 
     if (!postId) {
-        window.hideLoader();
+        const errorMessage = document.createElement('div');
+        errorMessage.textContent = 'Error: Post ID is missing.';
+        errorMessage.className = 'error-message';
+        postContainer.appendChild(errorMessage);
         return;
     }
 
     try {
-       
         const response = await fetch(`https://www.the-lore-of-pour.com/wp-json/wp/v2/posts/${postId}?_embed`);
         if (!response.ok) {
-            console.error(`HTTP error! status: ${response.status}`);
-            window.hideLoader(); 
+            console.error('Failed to load: HTTP error! status:', response.status); 
+            postContainer.textContent = `Error: Failed to load post. Status: ${response.status}`;
             return;
         }
         const post = await response.json();
@@ -28,8 +50,11 @@ async function fetchPostDetails() {
         document.getElementById('postContent').innerHTML = post.content.rendered;
 
         applyStyling();
+    } catch (error) {
+        console.error('An unexpected error occurred:', error.message); 
+        postContainer.textContent = 'Error: An unexpected error occurred.';
     } finally {
-        window.hideLoader(); 
+        window.hideLoader();
     }
 }
 
@@ -59,7 +84,7 @@ function applyStyling() {
             const modal = document.getElementById('myModal');
             const modalImg = document.getElementById('modalImage');
             modal.style.display = "block";
-            modalImg.src = this.src; 
+            modalImg.src = this.src;
         });
     }
 
