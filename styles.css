@@ -581,8 +581,12 @@ body {
 
 
   /* --- Post Details-- Modal ----------------------------------------------------------------------*/
-
-
+  
+  
+  
+    #modalImage {
+        display: none; 
+    }
 
     .modal {
         display: none; 
