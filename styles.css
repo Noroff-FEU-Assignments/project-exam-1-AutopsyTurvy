@@ -69,6 +69,7 @@ body {
     
     .search-icon {
         grid-column: 17; 
+        font-size: 1em;
     }
     
     .search-bar {
@@ -244,7 +245,7 @@ body {
     
     
     .main-logo {
-        height: 10em;
+        height: 5.5em;
     }
     
     .logo-bar-grid {
@@ -277,7 +278,7 @@ body {
         border: 1px solid #161412;
     }
     
-    @media (max-width: 950px) {
+    @media (max-width: 1050px) {
       
         .header-nav-links a {
             display: none;
@@ -396,15 +397,33 @@ body {
         margin-bottom: 3em;
     }
     
+    .opening-header {
+        margin: 0;   
+        font-size: 2.8em;
+    }
+
+    .scroll-for-latest-paragraph, .you-and-brew {
+        text-align: center;
+    }
+    
+    .you-and-brew {
+        font-family: 'Lato', sans-serif;
+        margin-top: 0;
+        margin-bottom: 2.5em;
+        font-size: 1em;
+
+    }
+
+    .scroll-for-latest-paragraph {
+        font-size: 0.8em;
+    }
+
     .home-slide-paragraph {
         display: none;        
     }
 
 
-    .scroll-for-latest-paragraph {
-        text-align: center;
-    }
-    
+
     
     .post img {
         width: 100vw;
