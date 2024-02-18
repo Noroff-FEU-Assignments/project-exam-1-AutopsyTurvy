@@ -7,7 +7,7 @@
 
 
 
-import { baseURL, allPostsURL } from './urlCall.js';
+import { allPostsURL } from './urlCall.js';
 import { carouselControls } from './carousel.js';
 import { displayErrorMessage } from './errorHandling.js';
 

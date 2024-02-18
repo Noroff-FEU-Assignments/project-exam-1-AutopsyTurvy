@@ -31,7 +31,7 @@ export function carouselControls() {
     let autoScroll;
 
     function scrollRight() {
-    const smallerStep = postWidth / 2; 
+    const smallerStep = postWidth / 4; 
     if (postsContainer.scrollLeft < totalScrollWidth - postWidth) {
         postsContainer.scrollBy({ left: smallerStep, behavior: 'smooth' });
     } else {

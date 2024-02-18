@@ -2,8 +2,6 @@
 
 
 
-
-
 // errorHandler.js
 
 const displayErrorMessage = (error, containerSelector) => {

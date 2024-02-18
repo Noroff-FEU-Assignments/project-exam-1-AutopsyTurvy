@@ -9,7 +9,7 @@
 
 
 
-import { baseURL, cardPostsURL } from './urlCall.js'; 
+import { cardPostsURL } from './urlCall.js'; 
 
 let currentIndex = 0;
 const postsPerPage = 10; 

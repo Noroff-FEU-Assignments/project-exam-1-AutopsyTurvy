@@ -11,6 +11,9 @@ async function fetchPostDetails() {
         postContainer = document.createElement('div');
         postContainer.id = 'post-container';
 
+
+
+        
         //note 
         //attaching the error to an element within the html created odd behaviour
         //the post-container is in my index.html- this should create another div, in the event of an error :)
