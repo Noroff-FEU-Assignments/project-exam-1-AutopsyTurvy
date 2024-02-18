@@ -261,6 +261,11 @@ body {
         justify-content: center; 
         align-items: center; 
     }
+
+    .header-nav-link-logo {
+        display: inline-block;
+        text-align: center;
+    }
     
     .header-nav-links a {
         display: inline-block;
