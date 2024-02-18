@@ -30,7 +30,6 @@ body {
 
 
     
-    
     /* --- Navigation Bar ----------------------------------------------------------------------*/
     
     #nav-bar-header, #nav-bar-footer {
@@ -40,6 +39,9 @@ body {
         grid-template-columns: repeat(24, 1fr); 
     }
 
+
+
+    
     
     .nav-grid {
         list-style: none;
@@ -401,6 +403,9 @@ body {
         object-fit: cover;
       }
     
+
+
+
       #posts-container {
         display: flex;
         overflow-x: auto;
@@ -412,6 +417,7 @@ body {
         overflow-x: auto;
         scroll-behavior: smooth;
         position: relative; 
+        min-height: calc(70vh - 100px);
     }
       
       .post {
@@ -499,7 +505,10 @@ body {
     
     /* --- Post Details Page ----------------------------------------------------------------------*/
     
-    
+    .post-detail-container {
+
+        min-height: calc(90vh - 100px);
+    }
     
     .postTitle {
         padding: 1em;
@@ -655,6 +664,7 @@ body {
     }
     
     .cards-container {
+        min-height: calc(70vh - 100px);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;

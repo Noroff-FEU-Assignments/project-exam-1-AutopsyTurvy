@@ -31,14 +31,14 @@ export function carouselControls() {
     let autoScroll;
 
     function scrollRight() {
-        const smallerStep = postWidth / 5; 
-        if (postsContainer.scrollLeft < totalScrollWidth - postWidth) {
-            postsContainer.scrollBy({ left: smallerStep, behavior: 'smooth' });
-        } else {
-            smoothReset(0);
-        }
-        if (autoScroll) resetAutoScroll(); 
+    const smallerStep = postWidth / 2; 
+    if (postsContainer.scrollLeft < totalScrollWidth - postWidth) {
+        postsContainer.scrollBy({ left: smallerStep, behavior: 'smooth' });
+    } else {
+        smoothReset(0);
     }
+    if (autoScroll) resetAutoScroll(); 
+}
 
     function scrollLeft() {
         if (postsContainer.scrollLeft > 0) {
