@@ -231,16 +231,6 @@ body {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /* --- Logo Navigation Bar ----------------------------------------------------------------------*/
     
     
@@ -407,7 +397,7 @@ body {
         font-size: 2.8em;
     }
 
-    .scroll-for-latest-paragraph, .you-and-brew {
+    .scroll-for-latest-paragraph, .you-and-brew, .products-mug-grab-header {
         text-align: center;
     }
     
@@ -529,11 +519,49 @@ body {
     }
     
     
+    /* --- Products ----------------------------------------------------------------------*/
+
+
+    #product-thumbnail-container {
+        overflow: scroll;
+        border: 1px solid rgba(59, 53, 48, 0.5);
+        max-width: 70%;
+        margin: 0 auto;
+        display: flex; 
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+
+
+    #thumbnail-image {
+        display: flex;
+        flex-direction: row; 
+        gap: 5px;
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        padding: 1em;
+        overflow: auto;
+        white-space: nowrap;
+        
+    }
     
-    
-    
-    
-    
+
+    #thumbnail-image a {
+        flex: 1 0 auto; 
+        text-decoration: none;
+    }
+
+
+    #thumbnail-image img {
+        max-width: 100%; 
+        max-height: 100px; 
+        object-fit: contain; 
+        border-radius: 50%; 
+        border: 1px solid rgba(59, 53, 48, 0.5);
+    }
+
+
+
     
     
     /* --- Post Details Page ----------------------------------------------------------------------*/
@@ -976,3 +1004,22 @@ display: none;
     
     
     
+
+
+
+
+
+
+.product-details-container {
+    height: 70vh;
+}
+
+
+    .wip {
+
+        margin: 0 auto;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        font-weight: 500;
+        font-size: 3em;
+    }
